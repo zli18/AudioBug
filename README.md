@@ -1,6 +1,6 @@
 # AudioBug
 
-This is a demo to show the inconsistent audio behaviours among some of Samsung's phones (AT&T models vs others).
+This app demonstrates the inconsistent audio behaviours among some of Samsung's phones (AT&T models vs others).
 
 The app uses a simple MediaPlayer and AudioRecord instances. The MediaPlayer starts playing music once the app starts. The AudioRecord will start recording once user clicks the "Start recording" button. Please note we use VOICE_COMMUNICATION option in recording to achieve acoustic echo cancellation.
 
