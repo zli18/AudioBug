@@ -25,14 +25,14 @@ public class MainActivity extends AppCompatActivity {
     private int RECORDER_AUDIO_ENCODING = AudioFormat.ENCODING_PCM_16BIT;
     private int BufferElements2Rec = 1024; // want to play 2048 (2K) since 2 bytes we use only 1024
     private int BytesPerElement = 2; // 2 bytes in 16bit format
-
+    MediaPlayer player;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         requestAudioPermissions();
 
-        MediaPlayer player = MediaPlayer.create(this, R.raw.audio);
+        player = MediaPlayer.create(this, R.raw.audio);
         player.start();
 
         findViewById(R.id.start_recording).setOnClickListener(new View.OnClickListener() {
@@ -84,6 +84,16 @@ public class MainActivity extends AppCompatActivity {
                 Manifest.permission.RECORD_AUDIO)
                 == PackageManager.PERMISSION_GRANTED) {
             Log.i(TAG, "Microphone permission has already been granted");
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        player.stop();
+        if (recorder != null) {
+            recorder.stop();
+            recorder.release();
         }
     }
 

@@ -3,7 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+    <TextView android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:text="Now you should hear the music playing.
+        \nTo test the audio bug:\nClick the START RECORDING button, if the music stops, then this device has this audio bug.
+        \nclick STOP RECORDING to reset.\n"/>
+
 
     <Button
         android:id="@+id/start_recording"
