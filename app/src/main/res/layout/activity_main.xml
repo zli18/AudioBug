@@ -8,22 +8,25 @@
     <TextView android:layout_height="wrap_content"
         android:padding="10dp"
         android:layout_width="match_parent"
-        android:text="Now you should hear the music playing.
-        \nTo test the audio bug:\nClick the START RECORDING button, if the music stops, then this device has this audio bug.
-        \nclick STOP RECORDING to reset.\n"/>
+        android:text="
+        \nThis app is to test audio output when echo cancellation is enabled.
+        \nNow you should hear the music playing.
+        \nTo test:
+        \nClick the START button, if the music mutes or reduces to very low volume, then this device has this audio bug. Please report.
+        \nclick STOP to reset.\n"/>
 
 
     <Button
         android:id="@+id/start_recording"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start Recording" />
+        android:text="Start" />
 
     <Button
         android:id="@+id/stop_recording"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Stop Recording" />
+        android:text="Stop" />
 
 
 </android.support.v7.widget.LinearLayoutCompat>
